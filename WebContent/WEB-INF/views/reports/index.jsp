@@ -19,7 +19,7 @@
                 </tr>
                 <tr>
                     <c:forEach var = "report" items = "${reports}" varStatus = "status">
-                        <tr class = "row${status.content % 2}">
+                        <tr class ="row${status.count % 2}">
                             <td class = "report_name"><c:out value = "${report.employee.name}" /></td>
                             <td><c:out value = "${report.report_date}" /></td>
                             <td><c:out value = "${report.title}" /></td>
