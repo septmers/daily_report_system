@@ -6,7 +6,11 @@
         <c:choose>
             <c:when test = "${report != null}">
                 <h2>日報　詳細ページ</h2>
-
+                <div id = "report_edit">
+                <c:if test = "${sessionScope.login_employee.id == report.employee.id}">
+                    <p><a href = "<c:url value = '/reports/edit?id=${report.id}' />">この日報を編集する</a></p>
+                </c:if>
+                </div>
                 <table>
                     <tbody>
                         <tr>
@@ -33,10 +37,6 @@
                         </tr>
                     </tbody>
                 </table>
-
-                <c:if test = "${sessionScope.login_employee.id == report.employee.id}">
-                    <p><a href = "<c:url value = '/reports/edit?id=${report.id}' />">この日報を編集する</a></p>
-                </c:if>
             </c:when>
             <c:otherwise>
                 お探しのデータは見つかりませんでした。
@@ -44,5 +44,6 @@
         </c:choose>
 
         <p><a href = "<c:url value = '/reports/index' />">一覧に戻る</a></p>
+        <p><a href = "<c:url value = '/' />">トップページに戻る</a>
     </c:param>
 </c:import>

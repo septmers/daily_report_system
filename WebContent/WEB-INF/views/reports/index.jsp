@@ -32,16 +32,18 @@
 
         <div id="pagination">
             （全 ${reports_count}件）<br />
-            <c:forEach var ="i" begin="1" end="${((reports_count - 1) / 15) + 1}">
-                <c:choose>
-                    <c:when test = "${i == page}">
-                        <c:out value = "${i}" />&nbsp;
-                    </c:when>
-                    <c:otherwise>
-                        <a href = "<c:url value = '/reports/index?page=${i}' />"><c:out value = "${i}" /></a>&nbsp;
-                    </c:otherwise>
-                </c:choose>
-            </c:forEach>
+            <div id = "page_container">
+                <c:forEach var ="i" begin="1" end="${((reports_count - 1) / 15) + 1}">
+                    <c:choose>
+                        <c:when test = "${i == page}">
+                            <div class = "page_item"><c:out value = "${i}" />&nbsp;</div>
+                        </c:when>
+                        <c:otherwise>
+                            <div class = "page_item"><a href = "<c:url value = '/reports/index?page=${i}' />"><c:out value = "${i}" /></a>&nbsp;</div>
+                        </c:otherwise>
+                    </c:choose>
+                </c:forEach>
+            </div>
         </div>
 
         <p><a href = "<c:url value = '/reports/new' />">新規日報の登録</a></p>

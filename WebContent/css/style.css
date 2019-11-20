@@ -160,3 +160,24 @@ table#report_list .report_action{
 pre{
     font-family: "Hiragino Kaku Gothic Pro", Meiryo, "MS PGothic", Helvetica, Arial, sans-serif;
 }
+
+h3{
+    font-size: larger;
+}
+
+#report_edit{
+    text-align: right;
+}
+
+#page_container{
+    display: flex;
+    justify-content: center;
+}
+
+.page_item{
+    background: #0bd;
+    color: #fff;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+}

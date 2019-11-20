@@ -36,16 +36,18 @@
 
         <div id="pagination">
             （全 ${employees_count} 件）<br />
-            <c:forEach var="i" begin="1" end="${((employees_count - 1) / 15) +1}" step="1">
-                <c:choose>
-                    <c:when test= "${page == i}">
-                        <c:out value = "${i}"/>&nbsp;
-                    </c:when>
-                    <c:otherwise>
-                        <a href="<c:url value ='/employees/views/index?page=${i}'/>"><c:out value = "${i}"/></a>&nbsp;
-                    </c:otherwise>
-                </c:choose>
+            <div id = "page_container">
+                <c:forEach var="i" begin="1" end="${((employees_count - 1) / 15) +1}" step="1">
+                    <c:choose>
+                        <c:when test= "${page == i}">
+                            <div class = "page_item"><c:out value = "${i}" />&nbsp;</div>
+                        </c:when>
+                        <c:otherwise>
+                            <div class = "page_item"><a href="<c:url value ='/employees/views/index?page=${i}'/>"><c:out value = "${i}"/></a>&nbsp;</div>
+                        </c:otherwise>
+                    </c:choose>
             </c:forEach>
+            </div>
         </div>
 
         <p><a href ="<c:url value = '/employees/new'/>">新規従業員の登録</a></p>
